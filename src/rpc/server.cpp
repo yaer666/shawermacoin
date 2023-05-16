@@ -315,11 +315,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || jsonRequest.params.size() > 1)
         throw std::runtime_error(
             "stop\n"
-            "\nStop Volkshash Core server.");
+            "\nStop Shavermacoin Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-       return "Volkshash Core server stopping \n ####              ####    #### 	\n  ####            ####    ####   	\n   ####     ###################### \n    ####    ######################	\n     ####      ####    ####    	\n       ########################  	\n        ########################	\n         #######   ####     	\n          ####    ####     	\n           ##    ####      	";
+       return "Shavermacoin Core server stopping \n ####              ####    #### 	\n  ####            ####    ####   	\n   ####     ###################### \n    ####    ######################	\n     ####      ####    ####    	\n       ########################  	\n        ########################	\n         #######   ####     	\n          ####    ####     	\n           ##    ####      	";
 
 //some one-line art for yall
 }
@@ -577,7 +577,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> volkshash-cli " + methodname + " " + args + "\n";
+    return "> shavermacoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

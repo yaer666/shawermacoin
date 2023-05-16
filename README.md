@@ -1,35 +1,34 @@
-Volkshash Core staging tree 0.13.0
+Shavermacoin Core staging tree 0.13.0
 ===============================+
 
-![volkshashmainnoborder](https://user-images.githubusercontent.com/118804027/213174948-cc7a1a75-5f11-452e-82f5-f1e1f5925299.png)
 
 
 
-What is Volkshash?
+What is Shavermacoin?
 ----------------
 
-Volkshash is an experimental digital currency that enables anonymous, instant
-payments to anyone, anywhere in the world. Volkshash uses peer-to-peer technology
+Shavermacoin is an experimental digital currency that enables anonymous, instant
+payments to anyone, anywhere in the world. Shavermacoin uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Volkshash Core is the name of the open
+are carried out collectively by the network. Shavermacoin Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Volkshash Core software, see https://www.volkshash.org/get-volkshash/.
+the Shavermacoin Core software, see https://www.shavermacoin.org/get-shavermacoin/.
 
 
 License
 -------
 
-Volkshash Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Shavermacoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/volkshashpay/volkshash/tags) are created to indicate new official,
-stable release versions of Volkshash Core.
+[Tags](https://github.com/shavermacoinpay/shavermacoin/tags) are created to indicate new official,
+stable release versions of Shavermacoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -65,7 +64,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Volkshash Core's Transifex page](https://www.transifex.com/projects/p/volkshash/).
+[Shavermacoin Core's Transifex page](https://www.transifex.com/projects/p/shavermacoin/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
@@ -73,4 +72,4 @@ Translations are periodically pulled from Transifex and merged into the git repo
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
-Translators should also follow the [forum](https://www.volkshash.org/forum/topic/volkshash-worldwide-collaboration.88/).
+Translators should also follow the [forum](https://www.shavermacoin.org/forum/topic/shavermacoin-worldwide-collaboration.88/).

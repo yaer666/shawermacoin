@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../volkshash.qrc"/>
+  <include location="../shavermacoin.qrc"/>
  </resources>
  <connections/>
 </ui>

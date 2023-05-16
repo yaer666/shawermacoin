@@ -21,10 +21,10 @@ static const CAmount CENT = 10;
 extern const std::string CURRENCY_UNIT;
 
 /** 
- * VOLKSHASH denomination 
+ * SHAWERMACOIN denomination 
 * int64 only allows up to 9,223,372,036,854,775,808 and the total of 219,000,000,000,000,000,000 if 100000000 is used 
-* To prevent a inter64 overflow in the build, Volkshash will not have a 8 denon as standard coins have
-* Fixed to 1 Volkshash = 1000 Volkshash Satoshis 
+* To prevent a inter64 overflow in the build, Shavermacoin will not have a 8 denon as standard coins have
+* Fixed to 1 Shavermacoin = 1000 Shavermacoin Satoshis 
 * 2190000000000000 Volkhash Satoshis to exist
 * 
 */

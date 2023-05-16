@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -198,8 +198,8 @@ public:
         consensus.BIP66Height = 66;                                     // BIP 66                   Start Block 66
         consensus.DIP0001Height = 1;                                    // DIP0001                  Start Block 1
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // Pow Limit  
-        consensus.nPowTargetTimespan = 3 * 60 * 60;                     // Volkshash: Every 60 Blocks 
-        consensus.nPowTargetSpacing = 3 * 60;                           // Volkshash: 3 Minute Block Time 
+        consensus.nPowTargetTimespan = 3 * 60 * 60;                     // Shavermacoin: Every 60 Blocks 
+        consensus.nPowTargetSpacing = 3 * 60;                           // Shavermacoin: 3 Minute Block Time 
         consensus.fPowAllowMinDifficultyBlocks = false;                 // Disabled Pow Allow Min Difficulty Blocks
 
         consensus.fPowNoRetargeting = false;                            // Disabled Pow No Retarget
@@ -272,28 +272,28 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000035502f6f464645ff5caa344484f01089f2020712fbd76b79a82ed92d91f"));
         assert(genesis.hashMerkleRoot == uint256S("0x7a49746bd2b2105991efd1529ae3f1ebf9e9eb392f163eec5bf69bf67673f669"));
 
-        // Seeds and Nodes for Volkshash 
-        vSeeds.push_back(CDNSSeedData("pool.volkshash.org", "102.219.85.87"));
-	vSeeds.push_back(CDNSSeedData("explorer.volkshash.org", "102.219.85.134"));    
-	vSeeds.push_back(CDNSSeedData("dns.volkshash.org", "147.135.211.28"));     
+        // Seeds and Nodes for Shavermacoin 
+        vSeeds.push_back(CDNSSeedData("pool.shavermacoin.org", "102.219.85.87"));
+	vSeeds.push_back(CDNSSeedData("explorer.shavermacoin.org", "102.219.85.134"));    
+	vSeeds.push_back(CDNSSeedData("dns.shavermacoin.org", "147.135.211.28"));     
 	    
 
 	    
 
-        // VolkshashMainent addresses start with 'V'
+        // ShavermacoinMainent addresses start with 'V'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,70);
-        // Volkshash script addresses start with '7'
+        // Shavermacoin script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,122);
-        // Volkshash private keys start with '7' or 'X'
+        // Shavermacoin private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,112);
         
         
-        // Volkshash BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Shavermacoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x1A)(0xA8)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Volkshash BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Shavermacoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x14)(0x88)(0x1D)(0xE1).convert_to_container<std::vector<unsigned char> >();
 
-        // Volkshash BIP44 coin type is '20'
+        // Shavermacoin BIP44 coin type is '20'
         nExtCoinType = 20;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -367,8 +367,8 @@ public:
         consensus.BIP66Height = 66;
         consensus.DIP0001Height = 1;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 1 * 60 * 60; // Volkshash: 1 hour
-        consensus.nPowTargetSpacing = 1 * 60;       // Volkshash: 1 minutes
+        consensus.nPowTargetTimespan = 1 * 60 * 60; // Shavermacoin: 1 hour
+        consensus.nPowTargetSpacing = 1 * 60;       // Shavermacoin: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 0; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -435,21 +435,21 @@ public:
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        // vSeeds.push_back(CDNSSeedData("pool.volkshash.org", "dnsseed.pool.volkshash.org"));
+        // vSeeds.push_back(CDNSSeedData("pool.shavermacoin.org", "dnsseed.pool.shavermacoin.org"));
 
 
-        // VolkshashTestNet addresses start with 'v'
+        // ShavermacoinTestNet addresses start with 'v'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,132);
-        // Testnet Volkshash script addresses start with '8' or '9'
+        // Testnet Shavermacoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,124);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,114);
-        // Testnet Volkshash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Shavermacoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x31)(0x83)(0xEF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Volkshash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Shavermacoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x03)(0x32)(0x82)(0x91).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Volkshash BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Shavermacoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -519,8 +519,8 @@ public:
         consensus.BIP66Height = 1; // BIP66 activated immediately on devnet
         consensus.DIP0001Height = 2; // DIP0001 activated immediately on devnet
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Volkshash: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Volkshash: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Shavermacoin: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Shavermacoin: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -584,20 +584,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("volkshashevo.org",  "devnet-seed.volkshashevo.org"));
+        //vSeeds.push_back(CDNSSeedData("shavermacoinevo.org",  "devnet-seed.shavermacoinevo.org"));
 
-        // VolkshashTestNet addresses start with 'r'
+        // ShavermacoinTestNet addresses start with 'r'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,130);
-        // Testnet Volkshash script addresses start with '8' or '9'
+        // Testnet Shavermacoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Volkshash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Shavermacoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Volkshash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Shavermacoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Volkshash BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Shavermacoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -671,8 +671,8 @@ public:
         consensus.BIP66Height = 0;
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("0xffff000000000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 0.5 * 60 * 60; // Volkshash: 0.5 day
-        consensus.nPowTargetSpacing = 1; // Volkshash: 1 sec
+        consensus.nPowTargetTimespan = 0.5 * 60 * 60; // Shavermacoin: 0.5 day
+        consensus.nPowTargetSpacing = 1; // Shavermacoin: 1 sec
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 0; // same as mainnet
@@ -785,18 +785,18 @@ public:
             0
         };
 
-        // Regtest Volkshash addresses start with 'u'
+        // Regtest Shavermacoin addresses start with 'u'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,130);
-        // Regtest Volkshash script addresses start with '8' or '9'
+        // Regtest Shavermacoin script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Volkshash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Shavermacoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Volkshash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Shavermacoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest Volkshash BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Shavermacoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params

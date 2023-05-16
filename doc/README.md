@@ -1,37 +1,37 @@
-Volkshash Core 0.13.0
+Shavermacoin Core 0.13.0
 =====================
 
-This is the official reference wallet for Volkshash digital currency and comprises the backbone of the Volkshash peer-to-peer network. You can [download Volkshash Core](https://www.volkshash.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Shavermacoin digital currency and comprises the backbone of the Shavermacoin peer-to-peer network. You can [download Shavermacoin Core](https://www.shavermacoin.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Volkshash on your native platform.
+The following are some helpful notes on how to run Shavermacoin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/volkshash-qt` (GUI) or
-- `bin/volkshashd` (headless)
+- `bin/shavermacoin-qt` (GUI) or
+- `bin/shavermacoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run volkshash-qt.exe.
+Unpack the files into a directory, and then run shavermacoin-qt.exe.
 
 ### OS X
 
-Drag Volkshash-Qt to your applications folder, and then run Volkshash-Qt.
+Drag Shavermacoin-Qt to your applications folder, and then run Shavermacoin-Qt.
 
 ### Need Help?
 
-* See the [Volkshash documentation](https://docs.volkshash.org)
+* See the [Shavermacoin documentation](https://docs.shavermacoin.org)
 for help and more information.
-* Ask for help on [Volkshash Nation Discord](http://volkshashchat.org)
-* Ask for help on the [Volkshash Forum](https://volkshash.org/forum)
+* Ask for help on [Shavermacoin Nation Discord](http://shavermacoinchat.org)
+* Ask for help on the [Shavermacoin Forum](https://shavermacoin.org/forum)
 
 Building
 ---------------------
-The following are developer notes on how to build Volkshash Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Shavermacoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Volkshash Core on your native 
 
 Development
 ---------------------
-The Volkshash Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Shavermacoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -57,8 +57,8 @@ The Volkshash Core repo's [root README](/README.md) contains relevant informatio
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Volkshash Forum](https://volkshash.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Volkshash Nation Discord](http://volkshashchat.org)
+* Discuss on the [Shavermacoin Forum](https://shavermacoin.org/forum), in the Development & Technical Discussion board.
+* Discuss on [Shavermacoin Nation Discord](http://shavermacoinchat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

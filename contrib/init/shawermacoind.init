@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  shavermacoind The Shavermacoin Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: shavermacoind
+# processname: shavermacoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/shavermacoind, see below
+if [ -f /etc/sysconfig/shavermacoind ]; then
+        . /etc/sysconfig/shavermacoind
+fi
+
+RETVAL=0
+
+prog=shavermacoind
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/shavermacoind
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/shavermacoind}
+
+# shavermacoind defaults to /usr/bin/shavermacoind, override with BITCOIND_BIN
+shavermacoind=${BITCOIND_BIN-/usr/bin/shavermacoind}
+
+# shavermacoind opts default to -disablewallet, override with BITCOIND_OPTS
+shavermacoind_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $shavermacoind $shavermacoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

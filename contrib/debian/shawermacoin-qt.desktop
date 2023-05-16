@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Shavermacoin Core
+Comment=Shavermacoin P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Shavermacoin peer-to-peer Netzwerk
+Comment[fr]=Shavermacoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Shavermacoin, eşten eşe kriptografik sanal para birimi
+Exec=shavermacoin-qt %u
+Terminal=false
+Type=Application
+Icon=shavermacoin128
+MimeType=x-scheme-handler/shavermacoin;
+Categories=Office;Finance;

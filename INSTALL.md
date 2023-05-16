@@ -1,5 +1,5 @@
-Building Volkshash
+Building Shavermacoin
 =============
 
 See doc/build-*.md for instructions on building the various
-elements of the Volkshash Core reference implementation of Volkshash.
+elements of the Shavermacoin Core reference implementation of Shavermacoin.

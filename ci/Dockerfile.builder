@@ -18,9 +18,9 @@ RUN apt-get update && apt-get install -y \
 # Python stuff
 RUN pip3 install pyzmq # really needed?
 
-# volkshash_hash
-RUN git clone https://github.com/volkshashpay/volkshash_hash
-RUN cd volkshash_hash && python3 setup.py install
+# shavermacoin_hash
+RUN git clone https://github.com/shavermacoinpay/shavermacoin_hash
+RUN cd shavermacoin_hash && python3 setup.py install
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
@@ -28,8 +28,8 @@ ARG GROUP_ID=1000
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID}
 ENV GROUP_ID ${GROUP_ID}
-RUN groupadd -g ${GROUP_ID} volkshash
-RUN useradd -u ${USER_ID} -g volkshash -s /bin/bash -m -d /volkshash volkshash
+RUN groupadd -g ${GROUP_ID} shavermacoin
+RUN useradd -u ${USER_ID} -g shavermacoin -s /bin/bash -m -d /shavermacoin shavermacoin
 
 # Extra packages
 ARG BUILD_TARGET=linux64
@@ -47,13 +47,13 @@ RUN \
   update-alternatives --set x86_64-w64-mingw32-g++  /usr/bin/x86_64-w64-mingw32-g++-posix; \
   exit 0
 
-RUN mkdir /volkshash-src && \
+RUN mkdir /shavermacoin-src && \
   mkdir -p /cache/ccache && \
   mkdir /cache/depends && \
   mkdir /cache/sdk-sources && \
-  chown $USER_ID:$GROUP_ID /volkshash-src && \
+  chown $USER_ID:$GROUP_ID /shavermacoin-src && \
   chown $USER_ID:$GROUP_ID /cache && \
   chown $USER_ID:$GROUP_ID /cache -R
-WORKDIR /volkshash-src
+WORKDIR /shavermacoin-src
 
-USER volkshash
+USER shavermacoin

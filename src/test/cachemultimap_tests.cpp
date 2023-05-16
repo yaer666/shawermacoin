@@ -2,7 +2,7 @@
 
 #include "cachemultimap.h"
 
-#include "test/test_volkshash.h"
+#include "test/test_shavermacoin.h"
 
 #include <algorithm>
 #include <iostream>

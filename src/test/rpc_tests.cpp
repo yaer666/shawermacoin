@@ -8,7 +8,7 @@
 #include "base58.h"
 #include "netbase.h"
 
-#include "test/test_volkshash.h"
+#include "test/test_shavermacoin.h"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/assign/list_of.hpp>

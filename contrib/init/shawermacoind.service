@@ -1,0 +1,22 @@
+[Unit]
+Description=Shavermacoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=shavermacoincore
+Group=shavermacoincore
+
+Type=forking
+PIDFile=/var/lib/shavermacoind/shavermacoind.pid
+ExecStart=/usr/bin/shavermacoind -daemon -pid=/var/lib/shavermacoind/shavermacoind.pid \
+-conf=/etc/shavermacoincore/shavermacoin.conf -datadir=/var/lib/shavermacoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

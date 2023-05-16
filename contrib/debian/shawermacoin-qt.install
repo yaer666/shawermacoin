@@ -1,0 +1,6 @@
+usr/local/bin/shavermacoin-qt usr/bin
+share/pixmaps/shavermacoin32.xpm usr/share/pixmaps
+share/pixmaps/shavermacoin16.xpm usr/share/pixmaps
+share/pixmaps/shavermacoin128.png usr/share/pixmaps
+debian/shavermacoin-qt.desktop usr/share/applications
+debian/shavermacoin-qt.protocol usr/share/kde4/services/

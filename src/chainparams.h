@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -40,7 +40,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * Volkshash system. There are three: the main network on which people trade goods
+ * Shavermacoin system. There are three: the main network on which people trade goods
  * and services, the public test network which gets reset from time to time and
  * a regression test mode which is intended for private networks only. It has
  * minimal difficulty to ensure that blocks can be found instantly.
@@ -93,8 +93,8 @@ public:
     const std::vector<std::string>& SporkAddresses() const { return vSporkAddresses; }
     int MinSporkKeys() const { return nMinSporkKeys; }
     bool BIP9CheckMasternodesUpgraded() const { return fBIP9CheckMasternodesUpgraded; }
-    const std::string& FounderAddress() const { return strFounderAddress; }       // volkshashHG
-    double FounderFee() const { return dFounderFee; }       // volkshashHG
+    const std::string& FounderAddress() const { return strFounderAddress; }       // shavermacoinHG
+    double FounderFee() const { return dFounderFee; }       // shavermacoinHG
 protected:
     CChainParams() {}
 
@@ -125,8 +125,8 @@ protected:
     std::vector<std::string> vSporkAddresses;
     int nMinSporkKeys;
     bool fBIP9CheckMasternodesUpgraded;
-    std::string strFounderAddress;         // volkshashHG
-    double dFounderFee;         // volkshashHG
+    std::string strFounderAddress;         // shavermacoinHG
+    double dFounderFee;         // shavermacoinHG
 };
 
 /**

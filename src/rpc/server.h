@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * Volkshash RPC command dispatcher.
+ * Shavermacoin RPC command dispatcher.
  */
 class CRPCTable
 {

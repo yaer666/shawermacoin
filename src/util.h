@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/volkshash-config.h"
+#include "config/shavermacoin-config.h"
 #endif
 
 #include "compat.h"
@@ -43,7 +43,7 @@
 #define DBG( x ) 
 #endif
 
-//Volkshash only features
+//Shavermacoin only features
 
 extern bool fMasternodeMode;
 extern bool fLiteMode;
@@ -255,7 +255,7 @@ void RenameThreadPool(ctpl::thread_pool& tp, const char* baseName);
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("volkshash-%s", name);
+    std::string s = strprintf("shavermacoin-%s", name);
     RenameThread(s.c_str());
     try
     {

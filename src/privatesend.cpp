@@ -294,7 +294,7 @@ std::string CPrivateSendBaseSession::GetStateString() const
     }
 }
 
-// Definitions for static data members TODO VOLKSHASH
+// Definitions for static data members TODO SHAWERMACOIN
 std::vector<CAmount> CPrivateSend::vecStandardDenominations;
 std::map<uint256, CPrivateSendBroadcastTx> CPrivateSend::mapDSTX;
 CCriticalSection CPrivateSend::cs_mapdstx;
@@ -448,10 +448,10 @@ int CPrivateSend::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fSi
 bool CPrivateSend::GetDenominationsBits(int nDenom, std::vector<int>& vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100VHH+1
-    // bit 1 - 10VHH+1
-    // bit 2 - 1VHH+1
-    // bit 3 - .1VHH+1
+    // bit 0 - 100SWC+1
+    // bit 1 - 10SWC+1
+    // bit 2 - 1SWC+1
+    // bit 3 - .1SWC+1
 
     int nMaxDenoms = vecStandardDenominations.size();
 

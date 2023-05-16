@@ -1,0 +1,11 @@
+[Protocol]
+exec=shavermacoin-qt '%u'
+protocol=shavermacoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

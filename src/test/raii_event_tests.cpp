@@ -12,7 +12,7 @@
 
 #include "support/events.h"
 
-#include "test/test_volkshash.h"
+#include "test/test_shavermacoin.h"
 
 #include <vector>
 

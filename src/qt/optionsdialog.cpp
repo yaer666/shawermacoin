@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/volkshash-config.h"
+#include "config/shavermacoin-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -97,7 +97,7 @@ TODO - BROKEN THEME LIST ON CORE
 
 
 
-ui->theme->addItem(QString("VHH-blue"), QVariant("drkblue"));
+ui->theme->addItem(QString("SWC-blue"), QVariant("drkblue"));
 
 
 */     

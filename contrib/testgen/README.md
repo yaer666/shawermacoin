@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Volkshash tests.
+Utilities to generate test vectors for the data-driven Shavermacoin tests.
 
 Usage: 
 

@@ -5,7 +5,7 @@
 #include "chainparams.h"
 #include "validation.h"
 
-#include "test/test_volkshash.h"
+#include "test/test_shavermacoin.h"
 
 #include <boost/test/unit_test.hpp>
 

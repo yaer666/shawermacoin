@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between volkshash-cli and volkshashd)
- * of a given instance of the Volkshash system.
+ * CBaseChainParams defines the base parameters (shared between shavermacoin-cli and shavermacoind)
+ * of a given instance of the Shavermacoin system.
  */
 class CBaseChainParams
 {

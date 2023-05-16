@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -241,7 +241,7 @@ std::string CKeePassIntegrator::constructHTTPPost(const std::string& strMsg, con
 {
     std::ostringstream streamOut;
     streamOut << "POST / HTTP/1.1\r\n"
-      << "User-Agent: volkshash-json-rpc/" << FormatFullVersion() << "\r\n"
+      << "User-Agent: shavermacoin-json-rpc/" << FormatFullVersion() << "\r\n"
       << "Host: localhost\r\n"
       << "Content-Type: application/json\r\n"
       << "Content-Length: " << strMsg.size() << "\r\n"
@@ -334,7 +334,7 @@ void CKeePassIntegrator::doHTTPPost(const std::string& sRequest, int& nStatusRet
     struct evkeyvalq *output_headers = evhttp_request_get_output_headers(req);
     assert(output_headers);
 //    s << "POST / HTTP/1.1\r\n"
-    evhttp_add_header(output_headers, "User-Agent", ("volkshash-json-rpc/" + FormatFullVersion()).c_str());
+    evhttp_add_header(output_headers, "User-Agent", ("shavermacoin-json-rpc/" + FormatFullVersion()).c_str());
     evhttp_add_header(output_headers, "Host", KEEPASS_HTTP_HOST);
     evhttp_add_header(output_headers, "Accept", "application/json");
     evhttp_add_header(output_headers, "Content-Type", "application/json");
@@ -492,7 +492,7 @@ void CKeePassIntegrator::rpcSetLogin(const SecureString& sWalletPass, const Secu
     LogPrint("keepass", "CKeePassIntegrator::rpcSetLogin -- send Url: %s\n", sUrl);
 
     //request.addStrParameter("SubmitUrl", sSubmitUrl); // Is used to construct the entry title
-    request.addStrParameter("Login", SecureString("volkshash"));
+    request.addStrParameter("Login", SecureString("shavermacoin"));
     request.addStrParameter("Password", sWalletPass);
     if(sEntryId.size() != 0)
     {

@@ -1,6 +1,0 @@
-usr/local/bin/volkshash-qt usr/bin
-share/pixmaps/volkshash32.xpm usr/share/pixmaps
-share/pixmaps/volkshash16.xpm usr/share/pixmaps
-share/pixmaps/volkshash128.png usr/share/pixmaps
-debian/volkshash-qt.desktop usr/share/applications
-debian/volkshash-qt.protocol usr/share/kde4/services/

@@ -33,37 +33,37 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-Volkshash Core is now available at `./src/volkshashd`
+Shavermacoin Core is now available at `./src/shavermacoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=volkshashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/VolkshashCore/volkshash.conf"
+    echo -e "rpcuser=shavermacoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/ShavermacoinCore/shavermacoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/VolkshashCore/volkshash.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/ShavermacoinCore/shavermacoin.conf"
 
-The first time you run volkshashd, it will start downloading the blockchain. This process could take several hours.
+The first time you run shavermacoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/VolkshashCore/debug.log
+    tail -f $HOME/Library/Application\ Support/ShavermacoinCore/debug.log
 
 Other commands:
 -------
 
-    ./src/volkshashd -daemon # Starts the volkshash daemon.
-    ./src/volkshash-cli --help # Outputs a list of command-line options.
-    ./src/volkshash-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/shavermacoind -daemon # Starts the shavermacoin daemon.
+    ./src/shavermacoin-cli --help # Outputs a list of command-line options.
+    ./src/shavermacoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for volkshash development.
+You can use Qt Creator as an IDE, for shavermacoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "volkshash-qt" as project name, enter src/qt as location
+4. Enter "shavermacoin-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

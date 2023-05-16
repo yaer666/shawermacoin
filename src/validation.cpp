@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -61,7 +61,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Volkshash Core cannot be compiled without assertions."
+# error "Shavermacoin Core cannot be compiled without assertions."
 #endif
 
 /**
@@ -714,7 +714,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
                                         hash.ToString(), ptxConflicting->GetHash().ToString()),
                                 REJECT_INVALID, "txlockreq-tx-mempool-conflict");
             }
-            // Transaction conflicts with mempool and RBF doesn't exist in Volkshash
+            // Transaction conflicts with mempool and RBF doesn't exist in Shavermacoin
             return state.Invalid(false, REJECT_CONFLICT, "txn-mempool-conflict");
         }
     }
@@ -1156,7 +1156,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     nSubsidyBase = 5000000;
     int nHeight = nPrevHeight +1;
     //Slow Start 300 Minutes = 5 Hours 
-    //MINOR UPDATE nSubsidy to allow Masternode blockValue * 0.0000002 = VHH0.001 , need to have this in place for the block creation logic 
+    //MINOR UPDATE nSubsidy to allow Masternode blockValue * 0.0000002 = SWC0.001 , need to have this in place for the block creation logic 
     //NOTE The reason for the change is for NOMP logic as the fee on getblocktemplate changed to NULL / unable to find "fee"
     if((nHeight >       0) & (nHeight <=   100)) nSubsidyBase =  5000;
     
@@ -1166,9 +1166,9 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     for (int i = consensusParams.nSubsidyFiftheningInterval; i <= nPrevHeight; i += consensusParams.nSubsidyFiftheningInterval) {
         nSubsidy -= nSubsidy/5;
     }
-    // How the FiftheningInterval works nSubsidyBase 5000000 - (nSubsidy/5) = VHH 4 000 00
-    // Futureproof VHH nSubsidy to be modified to 5 (Block Reward  = 20 % reduction) Every Block 87600 (0.5 Calendar Year)
-    // VHH 2189998625315 M cap Coins   / 585 000 000 = 3743.587394 Masternodes Total 
+    // How the FiftheningInterval works nSubsidyBase 5000000 - (nSubsidy/5) = SWC 4 000 00
+    // Futureproof SWC nSubsidy to be modified to 5 (Block Reward  = 20 % reduction) Every Block 87600 (0.5 Calendar Year)
+    // SWC 2189998625315 M cap Coins   / 585 000 000 = 3743.587394 Masternodes Total 
     // NOTES 
     // 5000000 Block Reward = Blocks Required Per Masternode 748.7179487  > Prev Block Height 87600
     // 4000000 Block Reward = Blocks Required Per Masternode  598.974359 < Prev Block Height 187600
@@ -1194,7 +1194,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
     return nSubsidy;
 }
 
-    // Volkshash Developement Fund Reward  : Blockvalue * 0.03 = 3% Start from block 1
+    // Shavermacoin Developement Fund Reward  : Blockvalue * 0.03 = 3% Start from block 1
 CAmount GetFounderPayment(int nHeight, CAmount blockValue) {
 
     //Setting Founder Fee to start from block 1 
@@ -1208,7 +1208,7 @@ CAmount GetFounderPayment(int nHeight, CAmount blockValue) {
     // Slow Start Adjusted Update to allow masternodes to be launched but value is only set to 1 as reward till block 150000 
     // NOTE Block Value * 0 = 0
     // Masternode Reward  : Blockvalue * 0.05 = 5% Start from block 150000
-    // MINOR UPDATE nSubsidy to allow Masternode blockValue * 0.0000002 = VHH0.001 , need to have this in place for the block creation logic 
+    // MINOR UPDATE nSubsidy to allow Masternode blockValue * 0.0000002 = SWC0.001 , need to have this in place for the block creation logic 
     // NOTE The reason for the change is for NOMP logic as the fee on getblocktemplate changed to NULL / unable to find "fee"
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
@@ -1817,7 +1817,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("volkshash-scriptch");
+    RenameThread("shavermacoin-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2020,7 +2020,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
         }
     }
 
-    /// VHH: Check superblock start
+    /// SWC: Check superblock start
 
     // make sure old budget is the real one
     if (pindex->nHeight == chainparams.GetConsensus().nSuperblockStartBlock &&
@@ -2029,7 +2029,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
             return state.DoS(100, error("ConnectBlock(): invalid superblock start"),
                              REJECT_INVALID, "bad-sb-start");
 
-    /// END VHH
+    /// END SWC
 
     // BIP16 didn't become active until Apr 1 2012
     int64_t nBIP16SwitchTime = 1333238400;
@@ -2225,7 +2225,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
                      pindex->GetBlockHash().ToString(), FormatStateMessage(state));
     }
 
-    // VHH
+    // SWC
 
     // It's possible that we simply don't have enough data and this could fail
     // (i.e. block itself could be a correct one and we need to store it),
@@ -2233,7 +2233,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     // the peer who sent us this block is missing some data and wasn't able
     // to recognize that block is actually invalid.
 
-    // VHH : CHECK TRANSACTIONS FOR INSTANTSEND
+    // SWC : CHECK TRANSACTIONS FOR INSTANTSEND
 
     if (sporkManager.IsSporkActive(SPORK_3_INSTANTSEND_BLOCK_FILTERING)) {
         // Require other nodes to comply, send them some data in case they are missing it.
@@ -2248,35 +2248,35 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
                     // TODO: relay instantsend data/proof.
                     LOCK(cs_main);
                     mapRejectedBlocks.insert(std::make_pair(block.GetHash(), GetTime()));
-                    return state.DoS(10, error("ConnectBlock(VHH): transaction %s conflicts with transaction lock %s", tx->GetHash().ToString(), hashLocked.ToString()),
+                    return state.DoS(10, error("ConnectBlock(SWC): transaction %s conflicts with transaction lock %s", tx->GetHash().ToString(), hashLocked.ToString()),
                                      REJECT_INVALID, "conflict-tx-lock");
                 }
             }
         }
     } else {
-        LogPrintf("ConnectBlock(VHH): spork is off, skipping transaction locking checks\n");
+        LogPrintf("ConnectBlock(SWC): spork is off, skipping transaction locking checks\n");
     }
 
-    // VHH : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
+    // SWC : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
 
     // TODO: resync data (both ways?) and try to reprocess this block later.
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->pprev->nBits, pindex->pprev->nHeight, chainparams.GetConsensus());
     std::string strError = "";
     if (!IsBlockValueValid(block, pindex->nHeight, blockReward, strError)) {
-        return state.DoS(0, error("ConnectBlock(VHH): %s", strError), REJECT_INVALID, "bad-cb-amount");
+        return state.DoS(0, error("ConnectBlock(SWC): %s", strError), REJECT_INVALID, "bad-cb-amount");
     }
 
     if (!IsBlockPayeeValid(*block.vtx[0], pindex->nHeight, blockReward)) {
         mapRejectedBlocks.insert(std::make_pair(block.GetHash(), GetTime()));
-        return state.DoS(0, error("ConnectBlock(VHH): couldn't find masternode or superblock payments"),
+        return state.DoS(0, error("ConnectBlock(SWC): couldn't find masternode or superblock payments"),
                                 REJECT_INVALID, "bad-cb-payee");
     }
     int64_t nTime5 = GetTimeMicros(); nTimePayeeAndSpecial += nTime5 - nTime4;
     LogPrint("bench", "    - Payee and special txes: %.2fms [%.2fs]\n", 0.001 * (nTime5 - nTime4), nTimePayeeAndSpecial * 0.000001);
 
-    // END VHH
+    // END SWC
 
-    // Added founder's reward, by volkshashHG
+    // Added founder's reward, by shavermacoinHG
     CAmount founderPayment = GetFounderPayment(pindex->nHeight, blockReward);
     if (founderPayment > 0) {
         CScript FounderScript = GetScriptForDestination(CBitcoinAddress(Params().FounderAddress()).Get());

@@ -16,8 +16,8 @@ If you need to broadcast an alert, here's what to do:
 1. Modify alert parameters below, see alert.* and comments in the code
    for what does what.
 
-2. run volkshashd with -printalert or -sendalert like this:
-   /path/to/volkshashd -printalert
+2. run shavermacoind with -printalert or -sendalert like this:
+   /path/to/shavermacoind -printalert
 
 One minute after starting up the alert will be broadcast. It is then
 flooded through the network until the nRelayUntil time, and will be
@@ -61,10 +61,10 @@ void ThreadSendAlert(CConnman& connman)
     //  Higher numbers mean higher priority
     alert.nPriority     = 5000;
     alert.strComment    = "";
-    alert.strStatusBar  = "URGENT: Upgrade required: see https://www.volkshash.org";
+    alert.strStatusBar  = "URGENT: Upgrade required: see https://www.shavermacoin.org";
 
     // Set specific client version/versions here. If setSubVer is empty, no filtering on subver is done:
-    // alert.setSubVer.insert(std::string("/Volkshash Core:0.12.0.58/"));
+    // alert.setSubVer.insert(std::string("/Shavermacoin Core:0.12.0.58/"));
 
     // Sign
     if(!alert.Sign())

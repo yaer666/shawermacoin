@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2023 The Volkshash Core Developers
+// Copyright (c) 2023 The Shavermacoin Core Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -992,7 +992,7 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, const std::string& strCommand,
     if (deterministicMNManager->IsDeterministicMNsSporkActive())
         return;
 
-    if(fLiteMode) return; // disable all Volkshash specific functionality
+    if(fLiteMode) return; // disable all Shavermacoin specific functionality
 
     if (strCommand == NetMsgType::MNANNOUNCE) { //Masternode Broadcast
 
@@ -1997,7 +1997,7 @@ void CMasternodeMan::NotifyMasternodeUpdates(CConnman& connman, bool forceAddedC
 
 void CMasternodeMan::DoMaintenance(CConnman& connman)
 {
-    if(fLiteMode) return; // disable all Volkshash specific functionality
+    if(fLiteMode) return; // disable all Shavermacoin specific functionality
 
     if(!masternodeSync.IsBlockchainSynced() || ShutdownRequested())
         return;

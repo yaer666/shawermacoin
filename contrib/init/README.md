@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: volkshashd.service
-Upstart: volkshashd.conf
-OpenRC:  volkshashd.openrc
-         volkshashd.openrcconf
-CentOS:  volkshashd.init
-OS X:    org.volkshash.volkshashd.plist
+SystemD: shavermacoind.service
+Upstart: shavermacoind.conf
+OpenRC:  shavermacoind.openrc
+         shavermacoind.openrcconf
+CentOS:  shavermacoind.init
+OS X:    org.shavermacoin.shavermacoind.plist
 
 have been made available to assist packagers in creating node packages here.
 

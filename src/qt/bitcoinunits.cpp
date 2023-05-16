@@ -19,7 +19,7 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(VHH);
+    unitlist.append(SWC);
     return unitlist;
 }
 
@@ -27,7 +27,7 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case VHH:
+    case SWC:
     return true;
     default:
         return false;
@@ -40,7 +40,7 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case VHH: return QString("VHH");
+            case SWC: return QString("SWC");
             default: return QString("???");
         }
     }
@@ -48,7 +48,7 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case VHH: return QString("tVHH");
+            case SWC: return QString("tSWC");
             default: return QString("???");
         }
     }
@@ -60,7 +60,7 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case VHH: return QString("Volkshash");
+            case SWC: return QString("Shavermacoin");
             default: return QString("???");
         }
     }
@@ -68,7 +68,7 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case VHH: return QString("TestVolkshashs");
+            case SWC: return QString("TestShavermacoins");
             default: return QString("???");
         }
     }
@@ -78,7 +78,7 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case VHH:  return 1000;
+    case SWC:  return 1000;
     default:   return 1000;
     }
 }
@@ -87,7 +87,7 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case VHH: return 3;
+    case SWC: return 3;
     default: return 0;
     }
 }

@@ -7,7 +7,7 @@
 #define BITCOIN_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/volkshash-config.h"
+#include "config/shavermacoin-config.h"
 #endif
 
 #ifdef WIN32
