@@ -1,7 +1,4 @@
-Shavermacoin Core staging tree 0.13.0
-===============================+
-
-
+Shavermacoin
 
 
 What is Shavermacoin?
